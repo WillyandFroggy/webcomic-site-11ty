@@ -1,12 +1,11 @@
-// const Card = require('../src/_includes/components/Card');
+const ComicViewer = require("./src/_includes/components/ComicViewer");
 
 module.exports = function (eleventyConfig) {
-  // eleventyConfig.addPassthroughCopy("src/assets/");
-  // eleventyConfig.addPassthroughCopy("src/css/");
+  eleventyConfig.addPassthroughCopy("src/favicon.ico");
+  eleventyConfig.addPassthroughCopy("src/assets/");
+  eleventyConfig.addWatchTarget("src/assets/css/");
 
-  // eleventyConfig.addWatchTarget("src/css/");
-
-  // eleventyConfig.addShortcode("Card", Card);
+  eleventyConfig.addShortcode("ComicViewer", ComicViewer);
 
   // eleventyConfig.addCollection('posts', function(collectionApi) {
   //   return collectionApi.getFilteredByGlob('src/blog/posts/**/*.md');

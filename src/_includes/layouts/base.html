@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title>{{ title }}</title>
+      <meta name="description" content="{{ description }}" />
+      <meta name="og:url" content="https://willyandfroggy.com/{{ slug }}" />
+      <meta name="og:type" content="website" />
+      <meta name="og:title" content="{{ title }}" />
+      <meta name="og:description" content="{{ description}}" />
+      <meta
+        name="og:image"
+        content="https://willyandfroggy.com/img/WF-BR-social-media.jpg"
+      />
+      <link rel="icon" href="/favicon.ico" />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin="anonymous"
+      />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;display=swap"
+        rel="stylesheet"
+      />
+      <link rel="stylesheet" href="/assets/css/base.css" />
+    </head>
+  </head>
+  <body>
+    <header id="header" style="top: 0px">
+      {% include "components/navbar.html" %}
+    </header>
+    {{ content | safe }}
+    <footer>{% include "components/footer.html" %}</footer>
+    <script src="/assets/js/script.js"></script>
+  </body>
+</html>
