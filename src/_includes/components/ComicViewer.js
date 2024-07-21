@@ -158,7 +158,14 @@ function ComicViewer({
             >Tip Jar</a
           >
         </div>
-        <a id="comic-viewer-share-link" href="#" class="comic-viewer-share-link"
+        <a
+          id="comic-viewer-share-link"
+          href="#"
+          onclick="shareHandler(event, '${id}', '${description.replace(
+            /'/g,
+            "\\'"
+          )}');"
+          class="comic-viewer-share-link"
           ><span>Share Link</span
           ><svg
             stroke-width="1.5"

@@ -83,3 +83,21 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 // END OF FIRST LOAD IMAGE FADE IN
+
+// SHARE LINK
+const navigatorVariable = window.navigator;
+
+const shareHandler = async (e, comicId, comicDescription) => {
+  console.log("shareHandler", comicId);
+  e.preventDefault();
+  try {
+    await navigatorVariable.share({
+      title: `Bright Red #${comicId}`,
+      text: `${comicDescription}`,
+      url: `https://www.willyandfroggy.com/BR/${comicId}`,
+    });
+  } catch (error) {
+    console.error("Share failed:", error.message);
+  }
+};
+// END OF SHARE LINK

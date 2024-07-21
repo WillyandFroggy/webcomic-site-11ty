@@ -4,15 +4,8 @@ title: "Willy + Froggy"
 description: "Comics about a whale and a frog who go on adventures. These comics are made by Amari Čertkus and published by Voyager Golden Comics."
 ---
 
-{% for i in range(comics|length) %} {% if i == 0 %} {% ComicViewer
-id=comics[i].id, description=comics[i].description, imageUrl=comics[i].imageUrl,
-variantUrl=comics[i].variantUrl, prevId=comics[i+1].id,
-prevImageUrl=comics[i+1].imageUrl %} {% elif i == (comics|length) - 1 %} {%
-ComicViewer id=comics[i].id, description=comics[i].description,
-imageUrl=comics[i].imageUrl, variantUrl=comics[i].variantUrl,
-nextId=comics[i-1].id, nextImageUrl=comics[i-1].imageUrl, latestId=comics[0].id
-%} {% else %} {% ComicViewer id=comics[i].id, description=comics[i].description,
-imageUrl=comics[i].imageUrl, variantUrl=comics[i].variantUrl,
-prevId=comics[i+1].id, prevImageUrl=comics[i+1].imageUrl, nextId=comics[i-1].id,
-nextImageUrl=comics[i-1].imageUrl, latestId=comics[0].id %} {% endif %} {%
-endfor %}
+{% set currentComic = comics[0] %} {% set prevComic = comics[1] %} {%
+ComicViewer id=currentComic.id, description=currentComic.description,
+imageUrl=currentComic.imageUrl, variantUrl=currentComic.variantUrl,
+prevId=prevComic.id, prevImageUrl=prevComic.imageUrl, nextId=nextComic.id,
+nextImageUrl=nextComic.imageUrl, latestId=comics[0].id %}
