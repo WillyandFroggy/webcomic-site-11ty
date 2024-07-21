@@ -9,6 +9,10 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addShortcode("ComicViewer", ComicViewer);
   eleventyConfig.addShortcode("ComicInfo", ComicInfo);
 
+  eleventyConfig.addCollection("comics", function (collection) {
+    return collection.getAll();
+  });
+
   // eleventyConfig.addCollection('posts', function(collectionApi) {
   //   return collectionApi.getFilteredByGlob('src/blog/posts/**/*.md');
   // })
