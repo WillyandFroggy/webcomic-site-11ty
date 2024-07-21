@@ -1,0 +1,34 @@
+---
+layout: layouts/base.html
+title: "Comics | Willy + Froggy"
+description: "Willy and Froggy comics, including The Theft of the Rare Blue Seaweed and Bright Red, are made by Amari Čertkus and published by Voyager Golden Comics. The Theft of the Rare Blue Seaweed is an adventure comic, while Bright Red is a weekly humour strip that is associated with a forthcoming adventure comic that will be called The Bright Red Time Potion."
+slug: "comics"
+---
+
+<main class="BR-archive">
+  <img
+    id="BR-archive-banner"
+    class=""
+    alt="Bright Red Comic Archive"
+    loading="lazy"
+    decoding="async"
+    sizes="(min-width: 300px) 300px, 100vw"
+    srcset="
+      https://cdn.shopify.com/s/files/1/0671/9838/6420/files/Bright-Red-Comic-Archive.png?v=1712323077&amp;width=300&amp;height=140 300w,
+      https://cdn.shopify.com/s/files/1/0671/9838/6420/files/Bright-Red-Comic-Archive.png?v=1712323077&amp;width=600&amp;height=280 600w
+    "
+    src="https://cdn.shopify.com/s/files/1/0671/9838/6420/files/Bright-Red-Comic-Archive.png?v=1712323077&amp;width=300&amp;height=140"
+    style="
+      object-fit: cover;
+      max-width: 300px;
+      max-height: 140px;
+      aspect-ratio: 2.14286 / 1;
+      width: 100%;
+    "
+  />
+  <ul>
+    {% for comic in comics %}
+    <li><a href="/BR-archive/{{ comic.imageUrl }}">{{ comic.id }}</a></li>
+    {% endfor %}
+  </ul>
+</main>

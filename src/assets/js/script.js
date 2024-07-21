@@ -70,15 +70,16 @@ function updateMenuState() {
 }
 // END OF MENU BUTTON
 
-// FIRST LOAD LOGO FADE IN
+// FIRST LOAD IMAGE FADE IN
 document.addEventListener("DOMContentLoaded", function () {
-  const hasLoadedBefore = localStorage.getItem("hasLoadedBefore");
-  if (!hasLoadedBefore) {
-    const logoImg = document.querySelector(".logo img");
-    if (logoImg) {
-      logoImg.classList.add("first-load");
+  const images = document.querySelectorAll("img");
+  images.forEach(function (img) {
+    const imgSrc = img.getAttribute("src");
+    const imgHasLoadedBefore = localStorage.getItem(imgSrc); // Use the image src as a unique identifier
+    if (!imgHasLoadedBefore) {
+      img.classList.add("first-load");
+      localStorage.setItem(imgSrc, "true");
     }
-    localStorage.setItem("hasLoadedBefore", "true");
-  }
+  });
 });
-// END OF FIRST LOAD LOGO FADE IN
+// END OF FIRST LOAD IMAGE FADE IN

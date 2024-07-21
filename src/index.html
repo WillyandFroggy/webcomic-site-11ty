@@ -5,4 +5,23 @@ description: "Comics about a whale and a frog who go on adventures. These comics
 slug: ""
 ---
 
-{% ComicViewer title="hello", link="YEAHYEAH!" %}
+<!-- prettier-ignore-start -->
+{% for i in range(comics|length) %}<br />
+{% if i == 0 %}<br />
+{% ComicViewer id=comics[i].id, description=comics[i].description,
+imageUrl=comics[i].imageUrl, variantUrl=comics[i].variantUrl,
+prevId=comics[i+1].id, prevImageUrl=comics[i+1].imageUrl %}<br />
+{% elif i == (comics|length) - 1 %}<br />
+{% ComicViewer id=comics[i].id, description=comics[i].description,
+imageUrl=comics[i].imageUrl, variantUrl=comics[i].variantUrl,
+nextId=comics[i-1].id, nextImageUrl=comics[i-1].imageUrl, latestId=comics[0].id
+%}<br />
+{% else %}<br />
+{% ComicViewer id=comics[i].id, description=comics[i].description,
+imageUrl=comics[i].imageUrl, variantUrl=comics[i].variantUrl,
+prevId=comics[i+1].id, prevImageUrl=comics[i+1].imageUrl, nextId=comics[i-1].id,
+nextImageUrl=comics[i-1].imageUrl, latestId=comics[0].id %}<br />
+{% endif %}<br />
+{% endfor %}<br />
+
+<!-- prettier-ignore-end -->
