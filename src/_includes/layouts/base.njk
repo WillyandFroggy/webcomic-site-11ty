@@ -6,7 +6,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <title>
         {{ title }}{% if pagination.items[0] %}Bright Red #{{
-        pagination.items[0].id }}{% endif %}
+          pagination.items[0].id
+        }}{% endif %}
       </title>
       <meta name="description" content="{{ description }}" />
       <meta name="og:url" content="https://willyandfroggy.com/{{ slug }}" />
@@ -14,12 +15,14 @@
       <meta
         name="og:title"
         content="{{ title }}{% if pagination.items[0] %}Bright Red #{{
-          pagination.items[0].id }}{% endif %}"
+          pagination.items[0].id
+        }}{% endif %}"
       />
       <meta
         name="og:description"
         content="{{ description }}{% if pagination.items[0] %}{{
-        pagination.items[0].description }}{% endif %}"
+          pagination.items[0].description
+        }}{% endif %}"
       />
       <meta
         name="og:image"
