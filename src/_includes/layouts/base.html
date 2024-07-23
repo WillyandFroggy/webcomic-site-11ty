@@ -4,15 +4,26 @@
     <head>
       <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <title>{{ title }}</title>
+      <title>
+        {{ title }}{% if pagination.items[0] %}Bright Red #{{
+        pagination.items[0].id }}{% endif %}
+      </title>
       <meta name="description" content="{{ description }}" />
       <meta name="og:url" content="https://willyandfroggy.com/{{ slug }}" />
       <meta name="og:type" content="website" />
-      <meta name="og:title" content="{{ title }}" />
-      <meta name="og:description" content="{{ description}}" />
+      <meta
+        name="og:title"
+        content="{{ title }}{% if pagination.items[0] %}Bright Red #{{
+          pagination.items[0].id }}{% endif %}"
+      />
+      <meta
+        name="og:description"
+        content="{{ description }}{% if pagination.items[0] %}{{
+        pagination.items[0].description }}{% endif %}"
+      />
       <meta
         name="og:image"
-        content="https://willyandfroggy.com/img/WF-BR-social-media.jpg"
+        content="https://willyandfroggy.com/assets/img/WF-BR-social-media.png"
       />
       <link rel="icon" href="/favicon.ico" />
       <link rel="preconnect" href="https://fonts.googleapis.com" />

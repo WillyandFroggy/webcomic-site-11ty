@@ -57,7 +57,7 @@ function ComicViewer({
     preloadingPrevComic = html`
       <img
         alt="preloading prev comic"
-        loading="lazy"
+        loading="eager"
         decoding="async"
         sizes="(min-width: 880px) 880px, 100vw"
         style="
