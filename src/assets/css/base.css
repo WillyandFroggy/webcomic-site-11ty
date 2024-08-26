@@ -106,9 +106,9 @@ header {
   max-width: 90px;
   opacity: 1;
 }
-.logo img.first-load {
+/* .logo img.first-load {
   animation: fadeInAnimation 0.5s ease-in-out;
-}
+} */
 input[type="checkbox"]:checked ~ #sidebarMenu {
   transform: translateX(0);
 }
@@ -351,9 +351,9 @@ footer ul:first-child {
   max-width: 300px;
   opacity: 1;
 }
-.BR-archive img.first-load {
+/* .BR-archive img.first-load {
   animation: fadeInAnimation 0.5s ease-in-out;
-}
+} */
 .BR-archive ul {
   list-style-type: none;
   padding: 0;
@@ -561,9 +561,9 @@ main.comics_page {
   margin: 1rem auto;
   opacity: 1;
 }
-.comics_image img.first-load {
+/* .comics_image img.first-load {
   animation: fadeInAnimation 0.5s ease-in-out;
-}
+} */
 .comics_info {
   overflow: auto;
   text-align: center;
