@@ -9,6 +9,7 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addShortcode("ComicViewer", ComicViewer);
   eleventyConfig.addShortcode("ComicInfo", ComicInfo);
+  eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 
   eleventyConfig.addCollection("comics", function (collection) {
     return collection.getAll();
