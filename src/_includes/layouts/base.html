@@ -6,8 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <title>
         {{ title }}{% if pagination.items[0] %}Bright Red #{{
-          pagination.items[0].id
-        }}{% endif %}
+        pagination.items[0].id }}{% endif %}
       </title>
       <meta name="description" content="{{ description }}" />
       <meta name="og:url" content="https://willyandfroggy.com/{{ slug }}" />
@@ -43,11 +42,6 @@
     </head>
   </head>
   <body>
-    <header id="header" style="top: 0px">
-      {% include "components/navbar.html" %}
-    </header>
     {{ content | safe }}
-    <footer>{% include "components/footer.html" %}</footer>
-    <script src="/assets/js/script.js"></script>
   </body>
 </html>

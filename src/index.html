@@ -4,8 +4,27 @@ title: "Willy + Froggy"
 description: "Comics about a whale and a frog who go on adventures. These comics are made by Amari Čertkus and published by Voyager Golden Comics."
 ---
 
-{% set currentComic = comics[0] %} {% set prevComic = comics[1] %} {%
-ComicViewer id=currentComic.id, description=currentComic.description,
-imageUrl=currentComic.imageUrl, variantUrl=currentComic.variantUrl,
-prevId=prevComic.id, prevImageUrl=prevComic.imageUrl, nextId=nextComic.id,
-nextImageUrl=nextComic.imageUrl, latestId=comics[0].id %}
+<main class="BR-archive">
+  <img
+    id="WF-logo"
+    class=""
+    alt="Willy and Froggy Logo"
+    loading="lazy"
+    decoding="async"
+    src="assets/img/WF-Logo.png"
+  />
+  <ul>
+    <li>
+      <a
+        href="https://www.webtoons.com/en/canvas/bright-red/list?title_no=950983"
+        >Bright Red</a
+      >
+    </li>
+    <li>
+      <a
+        href="https://www.webtoons.com/en/canvas/the-theft-of-the-rare-blue-seaweed/list?title_no=667854"
+        >The Theft of the Rare Blue Seaweed</a
+      >
+    </li>
+  </ul>
+</main>
