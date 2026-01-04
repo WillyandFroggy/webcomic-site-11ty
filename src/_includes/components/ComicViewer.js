@@ -2,6 +2,8 @@ const { html } = require("common-tags");
 
 function ComicViewer({
   id,
+  comicId,
+  comicTitle,
   description,
   imageUrl,
   variantUrl,
@@ -15,21 +17,21 @@ function ComicViewer({
   if (prevId && nextId) {
     navLinks = html` <div class="comic-viewer-nav-links">
       <div class="comic-viewer-left-links">
-        <a href="/BR/001">&lt;&lt; First</a
-        ><a class="comic-viewer-prev-button" href="/BR/${prevId}"
+        <a href="/${comicId}/001">&lt;&lt; First</a
+        ><a class="comic-viewer-prev-button" href="/${comicId}/${prevId}"
           >&lt; Previous</a
         >
       </div>
       <div class="comic-viewer-right-links">
-        <a class="comic-viewer-next-button" href="/BR/${nextId}">Next &gt;</a
-        ><a href="/BR/${latestId}">Latest &gt;&gt;</a>
+        <a class="comic-viewer-next-button" href="/${comicId}/${nextId}">Next &gt;</a
+        ><a href="/${comicId}/${latestId}">Latest &gt;&gt;</a>
       </div>
     </div>`;
   } else if (prevId) {
     navLinks = html` <div class="comic-viewer-nav-links">
       <div class="comic-viewer-left-links">
-        <a href="/BR/001">&lt;&lt; First</a
-        ><a class="comic-viewer-prev-button" href="/BR/${prevId}"
+        <a href="/${comicId}/001">&lt;&lt; First</a
+        ><a class="comic-viewer-prev-button" href="/${comicId}/${prevId}"
           >&lt; Previous</a
         >
       </div>
@@ -46,8 +48,8 @@ function ComicViewer({
         ><span class="comic-viewer-hidden-link">&lt; Previous</span>
       </div>
       <div class="comic-viewer-right-links">
-        <a class="comic-viewer-next-button" href="/BR/${nextId}">Next &gt;</a
-        ><a href="/BR/${latestId}">Latest &gt;&gt;</a>
+        <a class="comic-viewer-next-button" href="/${comicId}/${nextId}">Next &gt;</a
+        ><a href="/${comicId}/${latestId}">Latest &gt;&gt;</a>
       </div>
     </div>`;
   }
@@ -121,7 +123,7 @@ function ComicViewer({
   return html`
     <main>
       <div class="comic-viewer-container">
-        <div class="comic-container">
+        <div class="comic-container comic-container-${comicId}">
           <img
             id="comic-viewer-comic"
             alt="${description}"
@@ -134,6 +136,7 @@ function ComicViewer({
           max-height: 880px;
           aspect-ratio: 1;
           width: 100%;
+          ${comicId === "BLUE" ? "padding: 10px;" : ""}
         "
             srcset="
               ${imageUrl}&amp;width=640&amp;height=640    640w,
@@ -204,7 +207,7 @@ function ComicViewer({
           </svg>
         </a>
         <div class="comic-viewer-description">
-          <h2>Bright Red #${id}</h2>
+          <h2>${comicTitle} #${id}</h2>
           <p>${description}</p>
         </div>
         <div

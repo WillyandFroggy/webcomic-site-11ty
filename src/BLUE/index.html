@@ -2,14 +2,14 @@
 layout: layouts/base.html
 pagination:
   addAllPagesToCollections: true
-  data: br_comics
+  data: blue_comics
   size: 1
-permalink: "BR/{{ pagination.items[0].id }}/index.html"
+permalink: "BLUE/{{ pagination.items[0].id }}/index.html"
 ---
 
 {% set currentComic = pagination.items[0] %} {% set prevComic =
 pagination.page.next %} {% set nextComic = pagination.page.previous %} {%
-ComicViewer id=currentComic.id, comicId="BR", comicTitle="Bright Red", description=currentComic.description,
+ComicViewer id=currentComic.id, comicId="BLUE", comicTitle="The Theft of the Rare Blue Seaweed", description=currentComic.description,
 imageUrl=currentComic.imageUrl, variantUrl=currentComic.variantUrl,
 prevId=prevComic.id, prevImageUrl=prevComic.imageUrl, nextId=nextComic.id,
-nextImageUrl=nextComic.imageUrl, latestId=br_comics[0].id %}
+nextImageUrl=nextComic.imageUrl, latestId=blue_comics[0].id %}
