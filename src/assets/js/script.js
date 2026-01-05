@@ -87,14 +87,13 @@ document.addEventListener("DOMContentLoaded", function () {
 // SHARE LINK
 const navigatorVariable = window.navigator;
 
-const shareHandler = async (e, comicId, comicDescription) => {
-  console.log("shareHandler", comicId);
+const shareHandler = async (e, id, comicId, comicTitle, comicDescription) => {
   e.preventDefault();
   try {
     await navigatorVariable.share({
-      title: `Bright Red #${comicId}`,
+      title: `${comicTitle} #${id}`,
       text: `${comicDescription}`,
-      url: `https://www.willyandfroggy.com/BR/${comicId}`,
+      url: `https://www.willyandfroggy.com/${comicId}/${id}`,
     });
   } catch (error) {
     console.error("Share failed:", error.message);

@@ -24,10 +24,17 @@
           pagination.items[0].description
         }}{% endif %}"
       />
+      {% if "BLUE" in page.url | upper %}
       <meta
-        name="og:image"
-        content="https://willyandfroggy.com/assets/img/WF-BR-social-media.png"
+      name="og:image"
+      content="https://willyandfroggy.com/assets/img/WF-BLUE-social-media.png"
       />
+      {% else %}
+      <meta
+      name="og:image"
+      content="https://willyandfroggy.com/assets/img/WF-BR-social-media.png"
+      />
+      {% endif %}
       <link rel="icon" href="/favicon.ico" />
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link

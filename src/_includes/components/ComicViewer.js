@@ -24,7 +24,7 @@ function ComicViewer({
       </div>
       <div class="comic-viewer-right-links">
         <a class="comic-viewer-next-button" href="/${comicId}/${nextId}">Next &gt;</a
-        ><a href="/${comicId}/${latestId}">Latest &gt;&gt;</a>
+        ><a href="/${comicId}/${latestId}">Last &gt;&gt;</a>
       </div>
     </div>`;
   } else if (prevId) {
@@ -37,7 +37,7 @@ function ComicViewer({
       </div>
       <div class="comic-viewer-right-links">
         <span class="comic-viewer-hidden-link">Next &gt;</span
-        ><span class="comic-viewer-hidden-link">Latest &gt;&gt;</span>
+        ><span class="comic-viewer-hidden-link">Last &gt;&gt;</span>
       </div>
     </div>`;
   } else {
@@ -49,7 +49,7 @@ function ComicViewer({
       </div>
       <div class="comic-viewer-right-links">
         <a class="comic-viewer-next-button" href="/${comicId}/${nextId}">Next &gt;</a
-        ><a href="/${comicId}/${latestId}">Latest &gt;&gt;</a>
+        ><a href="/${comicId}/${latestId}">Last &gt;&gt;</a>
       </div>
     </div>`;
   }
@@ -122,8 +122,8 @@ function ComicViewer({
 
   return html`
     <main>
-      <div class="comic-viewer-container">
-        <div class="comic-container comic-container-${comicId}">
+      <div class="comic-viewer-container comic-viewer-container-${comicId}">
+        <div class="comic-container">
           <img
             id="comic-viewer-comic"
             alt="${description}"
@@ -164,7 +164,7 @@ function ComicViewer({
         <a
           id="comic-viewer-share-link"
           href="#"
-          onclick="shareHandler(event, '${id}', '${description.replace(
+          onclick="shareHandler(event, '${id}', '${comicId}', '${comicTitle}', '${description.replace(
             /'/g,
             "\\'"
           )}');"

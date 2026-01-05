@@ -5,30 +5,39 @@ description: "Bright Red is a weekly humour strip that is associated with a fort
 slug: "br-archive"
 ---
 
-<main class="BR-archive">
-  <img
-    id="BR-archive-banner"
-    class=""
-    alt="Bright Red Comic Archive"
-    loading="lazy"
-    decoding="async"
-    sizes="(min-width: 300px) 300px, 100vw"
-    srcset="
-      https://cdn.shopify.com/s/files/1/0671/9838/6420/files/Bright-Red-Comic-Archive.png?v=1712323077&amp;width=300&amp;height=140 300w,
-      https://cdn.shopify.com/s/files/1/0671/9838/6420/files/Bright-Red-Comic-Archive.png?v=1712323077&amp;width=600&amp;height=280 600w
-    "
-    src="https://cdn.shopify.com/s/files/1/0671/9838/6420/files/Bright-Red-Comic-Archive.png?v=1712323077&amp;width=300&amp;height=140"
-    style="
-      object-fit: cover;
-      max-width: 300px;
-      max-height: 140px;
-      aspect-ratio: 2.14286 / 1;
-      width: 100%;
-    "
-  />
-  <ul>
-    {% for comic in br_comics %}
-    <li><a href="/BR/{{ comic.id }}">{{ comic.id }}</a></li>
-    {% endfor %}
-  </ul>
+<main class="comics_page">
+      <div class="comics_banner">
+      <div class="comics_container" style="background-color:rgb(191, 48, 69)">
+        <div class="comics_image">
+          <img
+            alt="Bright Red: A comic strip"
+            loading="lazy"
+            decoding="async"
+            sizes="(min-width: 400px) 400px, 100vw"
+            style="object-fit:cover;max-width:400px;max-height:350px;aspect-ratio:1.1428571428571428;width:100%"
+            srcset="
+              https://cdn.shopify.com/s/files/1/0671/9838/6420/files/Bright-Red.png?v=1712499995&amp;width=400&amp;height=350 400w,
+              https://cdn.shopify.com/s/files/1/0671/9838/6420/files/Bright-Red.png?v=1712499995&amp;width=640&amp;height=560 640w,
+              https://cdn.shopify.com/s/files/1/0671/9838/6420/files/Bright-Red.png?v=1712499995&amp;width=750&amp;height=656 750w,
+              https://cdn.shopify.com/s/files/1/0671/9838/6420/files/Bright-Red.png?v=1712499995&amp;width=800&amp;height=700 800w
+            "
+            src="https://cdn.shopify.com/s/files/1/0671/9838/6420/files/Bright-Red.png?v=1712499995&amp;width=400&amp;height=350"
+          />
+        </div>
+        <div class="comics_info">
+          <h2>Bright Red</h2>
+          <p>A comic strip associated with the forthcoming adventure comic <em>The Bright Red Time Potion</em>.</p>
+          <ul>
+            <li><a href="#">Read Online</a></li>
+            <li><a href="#">Support the Artist ($)</a></li>
+          </ul>
+          <h3>Archive</h3>
+          <p class="archive-paragraph">
+            {% for comic in br_comics | reverse %}
+            <a href="/BR/{{ comic.id }}">{{ comic.id | replace("0", "", 1) }}</a>{% if not loop.last %} <span>|</span> {% endif %}
+            {% endfor %}            
+          </p>
+        </div>
+      </div>
+    </div>
 </main>
