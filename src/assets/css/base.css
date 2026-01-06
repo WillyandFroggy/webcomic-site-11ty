@@ -572,7 +572,7 @@ main.homepage {
 @media screen and (min-width: 920px) {
   main.homepage {
     margin: 0 auto 0 auto;
-    padding: 24px 0 24px 0;
+    padding: 0;
     gap: 24px;
   }
   .comic-card {
