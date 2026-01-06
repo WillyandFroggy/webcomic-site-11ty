@@ -1,5 +1,5 @@
 const ComicViewer = require("./src/_includes/components/ComicViewer");
-const ComicInfo = require("./src/_includes/components/ComicInfo");
+const ComicCard = require("./src/_includes/components/ComicCard");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/favicon.ico");
@@ -8,8 +8,13 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addWatchTarget("src/assets/css/");
 
   eleventyConfig.addShortcode("ComicViewer", ComicViewer);
-  eleventyConfig.addShortcode("ComicInfo", ComicInfo);
+  eleventyConfig.addShortcode("ComicCard", ComicCard);
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
+
+  // Add custom filter for zero-padding numbers
+  eleventyConfig.addFilter("padZero", function(num, size = 3) {
+    return String(num).padStart(size, '0');
+  });
 
   eleventyConfig.addCollection("blue_comics", function (collection) {
     return collection.getAll();

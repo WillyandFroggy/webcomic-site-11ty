@@ -1,6 +1,6 @@
 const { html } = require("common-tags");
 
-function ComicInfo({
+function ComicCard({
   title,
   description,
   backgroundColor,
@@ -15,9 +15,9 @@ function ComicInfo({
   link4Url,
 }) {
   return html`
-    <div class="comics_banner" style="background-color:${backgroundColor}">
-      <div class="comics_container">
-        <div class="comics_image">
+    <div class="comic-card" style="background-color:${backgroundColor}">
+      <div class="comic-card__container">
+        <a href="#" class="comic-card__image">
           <img
             alt="${title}"
             loading="lazy"
@@ -32,10 +32,9 @@ function ComicInfo({
             "
             src="${imgUrl}&amp;width=400&amp;height=350"
           />
-        </div>
-        <div class="comics_info">
-          <h2>${title}</h2>
-          <p>${description}</p>
+        </a>
+        <div class="comic-card__text">
+          <a href="#"><h2>${title}</h2></a>
           <ul>
             <li><a href="${link1Url}">${link1Title}</a></li>
             <li><a href="${link2Url}">${link2Title}</a></li>
@@ -52,4 +51,4 @@ function ComicInfo({
   `;
 }
 
-module.exports = ComicInfo;
+module.exports = ComicCard;
