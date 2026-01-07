@@ -2,17 +2,8 @@ const { html } = require("common-tags");
 
 function ComicCard({
   title,
-  description,
   backgroundColor,
-  imgUrl,
-  link1Title,
-  link1Url,
-  link2Title,
-  link2Url,
-  link3Title,
-  link3Url,
-  link4Title,
-  link4Url,
+  imgUrl
 }) {
   return html`
     <div class="comic-card" style="background-color:${backgroundColor}">
@@ -33,19 +24,6 @@ function ComicCard({
             src="${imgUrl}&amp;width=400&amp;height=350"
           />
         </a>
-        <div class="comic-card__text">
-          <a href="#"><h2>${title}</h2></a>
-          <ul>
-            <li><a href="${link1Url}">${link1Title}</a></li>
-            <li><a href="${link2Url}">${link2Title}</a></li>
-            <li>
-              <a href="${link3Url}">${link3Title}</a>
-            </li>
-            <li>
-              <a href="${link4Url}">${link4Title}</a>
-            </li>
-          </ul>
-        </div>
       </div>
     </div>
   `;
