@@ -77,6 +77,7 @@ p {
 }
 /* END OF BASE */
 
+<<<<<<< HEAD
 /* NAVBAR */
 header {
   position: fixed;
@@ -347,13 +348,16 @@ footer ul:first-child {
 }
 /* END OF FOOTER */
 
+=======
+>>>>>>> main
 /* BR ARCHIVE */
 .BR-archive {
+  margin-top: 2rem;
   text-align: center;
 }
 .BR-archive img {
   margin-top: 10pt;
-  max-width: 300px;
+  max-width: 200px;
   opacity: 1;
 }
 /* .BR-archive img.first-load {
@@ -376,6 +380,7 @@ footer ul:first-child {
   text-underline-offset: 3px;
   text-decoration-thickness: 1px;
 }
+<<<<<<< HEAD
 
 @media screen and (min-width: 920px) {
   .BR-archive img {
@@ -805,3 +810,5 @@ main.basic-page a:hover {
   }
 }
 /* END OF BASIC PAGE */
+=======
+>>>>>>> main
