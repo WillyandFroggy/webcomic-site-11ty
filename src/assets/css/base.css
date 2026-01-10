@@ -216,6 +216,7 @@ input[type="checkbox"]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
 main {
   margin-top: 70px;
   overflow: auto;
+  padding: 0 16px;
 }
 
 @media screen and (min-width: 920px) {
@@ -387,13 +388,30 @@ footer ul:first-child {
 
 /* END OF BR ARCHIVE */
 
-/* BR ID */
+/* COMIC VIEWER */
 .comic-viewer-container {
   margin: 0 auto;
 }
 
+.comic-viewer-image-container {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.5s ease;
+  transform-origin: 20% 25%;
+  cursor: zoom-in;
+}
+
+.comic-viewer-image-container.zoom-on {
+  cursor: zoom-out;
+}
+
+.comic-viewer-image-container.zoom-on:hover img {
+  transform: scale(1.65);
+}
+
 #comic-viewer-comic {
   width: 100%;
+  height: auto;
   opacity: 1;
   transition: opacity 0.5s ease-in-out;
 }
@@ -404,7 +422,7 @@ footer ul:first-child {
 
 .comic-viewer-nav-links {
   margin: 0 auto;
-  width: calc(100% - 20px);
+  width: 100%;
   display: flex;
   justify-content: space-between;
 }
@@ -502,7 +520,7 @@ footer ul:first-child {
   text-align: center;
   margin: 30px auto 20px auto;
   max-width: 650px;
-  padding: 0 20px;
+  padding: 0 16px;
 }
 
 .comic-viewer-description h2 {
@@ -523,7 +541,7 @@ footer ul:first-child {
   position: absolute;
   top: 0;
 }
-.comic-container {
+.comic-viewer-image-container {
   background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><circle fill="%23B4B4B4" stroke="%23B4B4B4" stroke-width="15" r="15" cx="40" cy="100"><animate attributeName="opacity" calcMode="spline" dur="2" values="1;0;1;" keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="-.4"></animate></circle><circle fill="%23B4B4B4" stroke="%23B4B4B4" stroke-width="15" r="15" cx="100" cy="100"><animate attributeName="opacity" calcMode="spline" dur="2" values="1;0;1;" keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="-.2"></animate></circle><circle fill="%23B4B4B4" stroke="%23B4B4B4" stroke-width="15" r="15" cx="160" cy="100"><animate attributeName="opacity" calcMode="spline" dur="2" values="1;0;1;" keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="0"></animate></circle></svg>');
   background-size: 75px 75px;
   background-repeat: no-repeat;
@@ -533,13 +551,7 @@ footer ul:first-child {
 @media screen and (min-width: 920px) {
   .comic-viewer-container {
     max-width: 880px;
-  }
-
-  .comic-container {
-    position: relative;
-    width: 100%;
-    height: 865px;
-    overflow: hidden;
+    margin: 0 auto;
   }
 
   #comic-viewer-comic {
@@ -552,7 +564,7 @@ footer ul:first-child {
     max-width: 440px;
   }
 }
-/* END OF BR ID */
+/* END OF COMIC VIEWER */
 
 /* COMICS PAGE */
 main.homepage {

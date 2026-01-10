@@ -123,7 +123,7 @@ function ComicViewer({
   return html`
     <main>
       <div class="comic-viewer-container comic-viewer-container-${comicId}">
-        <div class="comic-container">
+        <div class="comic-viewer-image-container">
           <img
             id="comic-viewer-comic"
             alt="${description}"
@@ -136,7 +136,7 @@ function ComicViewer({
           max-height: 880px;
           aspect-ratio: 1;
           width: 100%;
-          ${comicId === "BLUE" ? "padding: 10px;" : ""}
+          ${comicId === "BLUE" ? "padding-bottom: 10px;" : ""}
         "
             srcset="
               ${imageUrl}&amp;width=640&amp;height=640    640w,
