@@ -421,7 +421,7 @@ footer ul:first-child {
 }
 
 .comic-viewer-nav-links {
-  margin: 0 auto;
+  margin: 5px auto 0 auto;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -435,6 +435,7 @@ footer ul:first-child {
   text-underline-offset: 3px;
   text-decoration-thickness: 1px;
   transition: all 500ms ease;
+  font-size: 0.95rem;
 }
 
 .comic-viewer-nav-links a:hover {
@@ -551,17 +552,15 @@ footer ul:first-child {
 @media screen and (min-width: 920px) {
   .comic-viewer-container {
     max-width: 880px;
-    margin: 0 auto;
   }
-
-  #comic-viewer-comic {
-    position: absolute;
-    bottom: 0;
+  .comic-viewer-nav-links a,
+  .comic-viewer-nav-links span {
+    font-size: 1rem;
   }
 }
 @media screen and (min-width: 768px) {
   .comic-viewer-nav-links {
-    max-width: 440px;
+    max-width: 420px;
   }
 }
 /* END OF COMIC VIEWER */

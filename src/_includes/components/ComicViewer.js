@@ -136,7 +136,7 @@ function ComicViewer({
           max-height: 880px;
           aspect-ratio: 1;
           width: 100%;
-          ${comicId === "BLUE" ? "padding-bottom: 10px;" : ""}
+          ${comicId === "BLUE" ? "padding-bottom: 0;" : ""}
         "
             srcset="
               ${imageUrl}&amp;width=640&amp;height=640    640w,
