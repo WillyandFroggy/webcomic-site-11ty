@@ -12,7 +12,7 @@ function ComicCard({
         <a href="${link}" class="comic-card__image" style="background-color:${backgroundColor}">
           <img
             alt="${title}"
-            loading="lazy"
+            loading="eager"
             decoding="async"
             sizes="(min-width: 400px) 428px, 100vw"
             srcset="
