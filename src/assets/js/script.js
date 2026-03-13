@@ -68,6 +68,14 @@ function updateMenuState() {
 
 // FIRST LOAD IMAGE FADE IN
 document.addEventListener("DOMContentLoaded", function () {
+  // Add page-loaded to body to trigger CSS transitions
+  const setPageLoaded = () => document.body.classList.add("page-loaded");
+  if (document.readyState === "complete") {
+    setPageLoaded();
+  } else {
+    window.addEventListener("load", setPageLoaded, { once: true });
+  }
+  
   const images = document.querySelectorAll("img");
   images.forEach(function (img) {
     const imgSrc = img.getAttribute("src");

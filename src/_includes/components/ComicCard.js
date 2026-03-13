@@ -11,6 +11,13 @@ function ComicCard({
       <div class="comic-card__container">
         <a href="${link}" class="comic-card__image" style="background-color:${backgroundColor}">
           <img
+            class="comic-card__image--placeholder"
+            alt="${title}"
+            loading="eager"
+            decoding="async"
+            src="${imgUrl}&amp;width=40&amp;height=35"
+          />
+          <img
             alt="${title}"
             loading="eager"
             decoding="async"
