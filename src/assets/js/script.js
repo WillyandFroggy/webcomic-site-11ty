@@ -109,10 +109,11 @@ const shareHandler = async (e, id, comicId, comicTitle, comicDescription) => {
 document.addEventListener("DOMContentLoaded", function () {
   const comicImageContainer = document.querySelector(
     ".comic-viewer-image-container"
-  );
-  const comicImage = comicImageContainer.querySelector(
+  ) || null;
+  
+  const comicImage = comicImageContainer ? comicImageContainer.querySelector(
     ".comic-viewer-image-container img"
-  );
+  ) : null;
 
   // Zoom
   let isZoomed = false;
@@ -199,42 +200,44 @@ document.addEventListener("DOMContentLoaded", function () {
   let elapsedTime;
   let startTime;
 
-  comicImageContainer.addEventListener(
-    "touchstart",
-    function (e) {
-      if (!comicImageContainer.classList.contains("zoom-on")) {
-        let touchObj = e.changedTouches[0];
-        startX = touchObj.pageX;
-        startY = touchObj.pageY;
-        startTime = new Date().getTime();
-        // e.preventDefault();
-      }
-    },
-    true
-  );
+  if (comicImageContainer) {
+    comicImageContainer.addEventListener(
+      "touchstart",
+      function (e) {
+        if (!comicImageContainer.classList.contains("zoom-on")) {
+          let touchObj = e.changedTouches[0];
+          startX = touchObj.pageX;
+          startY = touchObj.pageY;
+          startTime = new Date().getTime();
+          // e.preventDefault();
+        }
+      },
+      true
+    );
 
-  comicImageContainer.addEventListener(
-    "touchend",
-    function (e) {
-      if (!comicImageContainer.classList.contains("zoom-on")) {
-        let touchObj = e.changedTouches[0];
-        distX = touchObj.pageX - startX;
-        distY = touchObj.pageY - startY;
-        elapsedTime = new Date().getTime() - startTime;
-        if (elapsedTime <= allowedTime) {
-          if (Math.abs(distX) >= threshold && Math.abs(distY) <= 100) {
-            if (distX > 0) {
-              document.querySelector(".comic-viewer-prev-button")?.click(); // right swipe
-            } else {
-              document.querySelector(".comic-viewer-next-button")?.click(); // left swipe
+    comicImageContainer.addEventListener(
+      "touchend",
+      function (e) {
+        if (!comicImageContainer.classList.contains("zoom-on")) {
+          let touchObj = e.changedTouches[0];
+          distX = touchObj.pageX - startX;
+          distY = touchObj.pageY - startY;
+          elapsedTime = new Date().getTime() - startTime;
+          if (elapsedTime <= allowedTime) {
+            if (Math.abs(distX) >= threshold && Math.abs(distY) <= 100) {
+              if (distX > 0) {
+                document.querySelector(".comic-viewer-prev-button")?.click(); // right swipe
+              } else {
+                document.querySelector(".comic-viewer-next-button")?.click(); // left swipe
+              }
             }
           }
+          //        e.preventDefault();
         }
-        //        e.preventDefault();
-      }
-    },
-    true
-  );
+      },
+      true
+    );
+  }
   // End of swipe to next/previous comic
 });
 // END OF ZOOM AND SWIPE TO NEXT/PREVIOUS COMIC

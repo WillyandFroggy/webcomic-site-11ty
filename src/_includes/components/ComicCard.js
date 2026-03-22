@@ -20,6 +20,7 @@ function ComicCard({
           <img
             alt="${title}"
             loading="eager"
+            fetchpriority="high"
             decoding="async"
             sizes="(min-width: 400px) 428px, 100vw"
             srcset="

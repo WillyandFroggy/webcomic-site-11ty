@@ -127,7 +127,8 @@ function ComicViewer({
           <img
             id="comic-viewer-comic"
             alt="${description}"
-            loading="lazy"
+            loading="eager"
+            fetchpriority="high"
             decoding="async"
             sizes="(min-width: 880px) 880px, 100vw"
             style="
