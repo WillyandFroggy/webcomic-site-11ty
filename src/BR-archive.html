@@ -32,11 +32,11 @@ slug: "BR-archive"
             <li><a href="https://shop.willyandfroggy.com/products/tip-jar">Support the Artist ($)</a></li>
           </ul>
           <h3>Archive</h3>
-          <p class="archive-paragraph">
+          <div class="archive-paragraph">
             {% for comic in br_comics | reverse %}
-            <a href="/BR/{{ comic.id }}">{{ comic.id | replace("0", "", 1) }}</a>{% if not loop.last %} <span>|</span> {% endif %}
+            <a href="/BR/{{ comic.id }}">{{ comic.id | replace("0", "", 1) }}</a>
             {% endfor %}            
-          </p>
+          </div>
         </div>
       </div>
     </div>

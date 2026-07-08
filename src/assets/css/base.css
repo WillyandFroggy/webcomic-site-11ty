@@ -78,7 +78,6 @@ body {
 body.menu-open {
   overflow: hidden;
 }
-
 h2 {
   font-weight: 400;
   font-size: var(--font-size-heading);
@@ -316,7 +315,7 @@ input[type="checkbox"]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
 main {
   margin-top: 70px;
   overflow: auto;
-  padding: 0 16px;
+  padding: 5px 16px 0 16px;
 }
 
 @media screen and (min-width: 920px) {
@@ -692,7 +691,7 @@ footer ul:first-child {
 main.homepage {
   max-width: 800px;
   margin: 78px auto 0 auto;
-  padding: 0 20px;
+  padding: 5px 20px 0 20px;
   display: flex;
   gap: 14px;
 }
@@ -732,7 +731,7 @@ main.homepage {
 @media screen and (min-width: 920px) {
   main.homepage {
     margin: 0 auto 0 auto;
-    padding: 0;
+    padding: 5px 0 0 0;
     gap: 24px;
   }
   .comic-card {
@@ -744,6 +743,7 @@ main.homepage {
 /* COMICS ARCHIVE PAGE */
 main.comics-page {
   margin: 77px auto 0 auto;
+  padding-top: 5px;
 }
 
 .comics-banner {
@@ -754,7 +754,7 @@ main.comics-page {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  padding: 24px 0 48px 0;
+  padding: 0 0 48px 0;
 }
 
 .comics-image {
@@ -834,14 +834,19 @@ main.comics-page {
   text-wrap: balance;
 }
 .comics-info .archive-paragraph {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
   margin-top: 0.85rem;
   margin-bottom: 0;
-  line-height: var(--line-height-regular);
+  padding: 0 20px;
 }
 .comics-info .archive-paragraph a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1.25;
   text-decoration: none;
-  margin-left: 0;
-  margin-right: 0;
+  margin: 0;
 }
 .comics-info .archive-paragraph a:hover {
   text-decoration: underline;
@@ -877,7 +882,7 @@ main.comics-page {
     justify-content: space-evenly;
     align-items: flex-start;
     margin: 0 auto;
-    padding: 24px 0 24px 0;
+    padding: 0 0 24px 0;
     border-radius: 1rem;
   }
   .comics-info ul {
@@ -901,7 +906,12 @@ main.comics-page {
   .comics-info h3 {
     margin: 1.5rem auto 0.85rem auto;
   }
-  
+  .comics-info .archive-paragraph {
+    grid-template-columns: repeat(8, 1fr);
+  }
+  .comics-info .archive-paragraph a {
+    aspect-ratio: 1.6;
+  }
 }
 /* END OF COMICS ARCHIVE PAGE */
 
@@ -909,7 +919,7 @@ main.comics-page {
 main.basic-page {
   max-width: 800px;
   margin: 65px auto 0 auto;
-  padding: 0 20px;
+  padding: 5px 20px 0 20px;
 }
 
 main.basic-page p {
@@ -917,7 +927,7 @@ main.basic-page p {
 }
 
 main.basic-page h1 {
-  margin: 0.4em 0;
+  margin: 0 0 0.4em 0;
   font-weight: 400;
 }
 
