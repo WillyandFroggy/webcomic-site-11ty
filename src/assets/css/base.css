@@ -168,7 +168,7 @@ body.background-blue .galaxy-nebula {
 header {
   position: fixed;
   top: 0;
-  transition: top 0.3s;
+  transition: top 0.3s, background-color 0.3s ease;
   display: block;
   margin: 0 auto;
   width: 100%;
@@ -178,11 +178,17 @@ header {
   overflow: hidden;
   z-index: 10;
 }
+header.header-scrolled {
+  background-color: var(--br-dark-bg);
+}
+body.background-blue header.header-scrolled {
+  background-color: var(--blue-dark-bg);
+}
 .logo {
   position: fixed;
   width: 100%;
   text-align: center;
-  margin-top: 18px;
+  margin-top: 16px;
   font-size: 24px;
 }
 .logo a {

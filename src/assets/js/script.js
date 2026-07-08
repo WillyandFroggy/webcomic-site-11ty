@@ -4,6 +4,7 @@ var prevScrollpos = window.scrollY;
 function handleNavbarVisibility() {
   if (window.innerWidth > 920) {
     document.getElementById("header").style.top = "0";
+    document.getElementById("header").classList.remove("header-scrolled");
     if (menuActive) {
       menuActive = false;
       updateMenuState();
@@ -15,6 +16,11 @@ window.onscroll = function () {
   if (window.innerWidth <= 920) {
     if (menuActive) {
       document.getElementById("header").style.top = "0";
+      if (window.scrollY <= 0) {
+        document.getElementById("header").classList.remove("header-scrolled");
+      } else {
+        document.getElementById("header").classList.add("header-scrolled");
+      }
       prevScrollpos = window.scrollY;
       return;
     }
@@ -24,6 +30,11 @@ window.onscroll = function () {
       document.getElementById("header").style.top = "0";
     } else {
       document.getElementById("header").style.top = "-70px";
+    }
+    if (currentScrollPos <= 0) {
+      document.getElementById("header").classList.remove("header-scrolled");
+    } else {
+      document.getElementById("header").classList.add("header-scrolled");
     }
     prevScrollpos = currentScrollPos;
   }
