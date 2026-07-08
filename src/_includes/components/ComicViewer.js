@@ -61,26 +61,26 @@ function ComicViewer({
         alt="preloading prev comic"
         loading="eager"
         decoding="async"
-        sizes="(min-width: 880px) 880px, 100vw"
+        sizes="(min-width: 800px) 800px, 100vw"
         style="
           object-fit: cover;
-          max-width: 880px;
-          max-height: 880px;
+          max-width: 800px;
+          max-height: 800px;
           aspect-ratio: 1;
           width: 100%;
         "
         srcset="
-          ${prevImageUrl}&amp;width=640&amp;height=640    640w,
-          ${prevImageUrl}&amp;width=750&amp;height=750    750w,
-          ${prevImageUrl}&amp;width=828&amp;height=828    828w,
-          ${prevImageUrl}&amp;width=880&amp;height=880    880w,
-          ${prevImageUrl}&amp;width=960&amp;height=960    960w,
-          ${prevImageUrl}&amp;width=1080&amp;height=1080 1080w,
-          ${prevImageUrl}&amp;width=1280&amp;height=1280 1280w,
-          ${prevImageUrl}&amp;width=1668&amp;height=1668 1668w,
-          ${prevImageUrl}&amp;width=1760&amp;height=1760 1760w
+          ${prevImageUrl}&amp;width=800&amp;height=800    800w,
+          ${prevImageUrl}&amp;width=1000&amp;height=1000 1000w,
+          ${prevImageUrl}&amp;width=1200&amp;height=1200 1200w,
+          ${prevImageUrl}&amp;width=1400&amp;height=1400 1400w,
+          ${prevImageUrl}&amp;width=1600&amp;height=1600 1600w,
+          ${prevImageUrl}&amp;width=1800&amp;height=1800 1800w,
+          ${prevImageUrl}&amp;width=2000&amp;height=2000 2000w,
+          ${prevImageUrl}&amp;width=2200&amp;height=2200 2200w,
+          ${prevImageUrl}&amp;width=2400&amp;height=2400 2400w
         "
-        src="${prevImageUrl}&amp;width=880&amp;height=880"
+        src="${prevImageUrl}&amp;width=800&amp;height=800"
       />
     `;
   } else {
@@ -94,26 +94,26 @@ function ComicViewer({
         alt="preloading next comic"
         loading="lazy"
         decoding="async"
-        sizes="(min-width: 880px) 880px, 100vw"
+        sizes="(min-width: 800px) 800px, 100vw"
         style="
           object-fit: cover;
-          max-width: 880px;
-          max-height: 880px;
+          max-width: 800px;
+          max-height: 800px;
           aspect-ratio: 1;
           width: 100%;
         "
         srcset="
-          ${nextImageUrl}&amp;width=640&amp;height=640    640w,
-          ${nextImageUrl}&amp;width=750&amp;height=750    750w,
-          ${nextImageUrl}&amp;width=828&amp;height=828    828w,
-          ${nextImageUrl}&amp;width=880&amp;height=880    880w,
-          ${nextImageUrl}&amp;width=960&amp;height=960    960w,
-          ${nextImageUrl}&amp;width=1080&amp;height=1080 1080w,
-          ${nextImageUrl}&amp;width=1280&amp;height=1280 1280w,
-          ${nextImageUrl}&amp;width=1668&amp;height=1668 1668w,
-          ${nextImageUrl}&amp;width=1760&amp;height=1760 1760w
+          ${nextImageUrl}&amp;width=800&amp;height=800    800w,
+          ${nextImageUrl}&amp;width=1000&amp;height=1000 1000w,
+          ${nextImageUrl}&amp;width=1200&amp;height=1200 1200w,
+          ${nextImageUrl}&amp;width=1400&amp;height=1400 1400w,
+          ${nextImageUrl}&amp;width=1600&amp;height=1600 1600w,
+          ${nextImageUrl}&amp;width=1800&amp;height=1800 1800w,
+          ${nextImageUrl}&amp;width=2000&amp;height=2000 2000w,
+          ${nextImageUrl}&amp;width=2200&amp;height=2200 2200w,
+          ${nextImageUrl}&amp;width=2400&amp;height=2400 2400w
         "
-        src="${nextImageUrl}&amp;width=880&amp;height=880"
+        src="${nextImageUrl}&amp;width=800&amp;height=800"
       />
     `;
   } else {
@@ -124,34 +124,38 @@ function ComicViewer({
     <main>
       <div class="comic-viewer-container comic-viewer-container-${comicId}">
         <div class="comic-viewer-image-container">
+          ${nextId
+            ? html`<a href="/${comicId}/${nextId}" style="display: block">`
+            : ""}
           <img
             id="comic-viewer-comic"
             alt="${description}"
             loading="eager"
             fetchpriority="high"
             decoding="async"
-            sizes="(min-width: 880px) 880px, 100vw"
+            sizes="(min-width: 800px) 800px, 100vw"
             style="
           object-fit: cover;
-          max-width: 880px;
-          max-height: 880px;
+          max-width: 800px;
+          max-height: 800px;
           aspect-ratio: 1;
           width: 100%;
           ${comicId === "BLUE" ? "padding-bottom: 0;" : ""}
         "
             srcset="
-              ${imageUrl}&amp;width=640&amp;height=640    640w,
-              ${imageUrl}&amp;width=750&amp;height=750    750w,
-              ${imageUrl}&amp;width=828&amp;height=828    828w,
-              ${imageUrl}&amp;width=880&amp;height=880    880w,
-              ${imageUrl}&amp;width=960&amp;height=960    960w,
-              ${imageUrl}&amp;width=1080&amp;height=1080 1080w,
-              ${imageUrl}&amp;width=1280&amp;height=1280 1280w,
-              ${imageUrl}&amp;width=1668&amp;height=1668 1668w,
-              ${imageUrl}&amp;width=1760&amp;height=1760 1760w
+              ${imageUrl}&amp;width=800&amp;height=800    800w,
+              ${imageUrl}&amp;width=1000&amp;height=1000 1000w,
+              ${imageUrl}&amp;width=1200&amp;height=1200 1200w,
+              ${imageUrl}&amp;width=1400&amp;height=1400 1400w,
+              ${imageUrl}&amp;width=1600&amp;height=1600 1600w,
+              ${imageUrl}&amp;width=1800&amp;height=1800 1800w,
+              ${imageUrl}&amp;width=2000&amp;height=2000 2000w,
+              ${imageUrl}&amp;width=2200&amp;height=2200 2200w,
+              ${imageUrl}&amp;width=2400&amp;height=2400 2400w
             "
-            src="${imageUrl}&amp;width=880&amp;height=880"
+            src="${imageUrl}&amp;width=800&amp;height=800"
           />
+          ${nextId ? html`</a>` : ""}
         </div>
         ${navLinks}
         <div class="comic-viewer-ad-buttons">
@@ -169,8 +173,8 @@ function ComicViewer({
             /'/g,
             "\\'"
           )}');"
-          class="comic-viewer-share-link"
-          ><span>Share Link</span
+          class="comic-viewer-share-link comic-viewer-share-link-${comicId.toLowerCase()}"
+          ><span>Share</span
           ><svg
             stroke-width="1.5"
             viewBox="0 0 24 24"

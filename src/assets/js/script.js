@@ -4,11 +4,21 @@ var prevScrollpos = window.scrollY;
 function handleNavbarVisibility() {
   if (window.innerWidth > 920) {
     document.getElementById("header").style.top = "0";
+    if (menuActive) {
+      menuActive = false;
+      updateMenuState();
+    }
   }
 }
 
 window.onscroll = function () {
   if (window.innerWidth <= 920) {
+    if (menuActive) {
+      document.getElementById("header").style.top = "0";
+      prevScrollpos = window.scrollY;
+      return;
+    }
+
     var currentScrollPos = window.scrollY;
     if (prevScrollpos > currentScrollPos || currentScrollPos <= 0) {
       document.getElementById("header").style.top = "0";
@@ -29,6 +39,7 @@ const checkbox = document.querySelector(".menu-button");
 const checkboxLabel = document.querySelector(".sidebarIconToggle");
 const menu = document.querySelector(".menu");
 const links = menu.querySelectorAll("a");
+const body = document.body;
 
 checkbox.addEventListener("change", () => {
   menuActive = !menuActive;
@@ -58,14 +69,23 @@ document.addEventListener("click", (event) => {
 
 function updateMenuState() {
   checkbox.checked = menuActive;
+
+  if (menuActive && window.innerWidth <= 920) {
+    header.style.top = "0";
+    prevScrollpos = window.scrollY;
+  }
+
   if (menuActive) {
     menu.classList.add("active");
   } else {
     menu.classList.remove("active");
   }
+
+  body.classList.toggle("menu-open", menuActive && window.innerWidth <= 920);
 }
 // END OF MENU BUTTON
 
+/*
 // FIRST LOAD IMAGE FADE IN
 document.addEventListener("DOMContentLoaded", function () {
   // Add page-loaded to body to trigger CSS transitions
@@ -87,6 +107,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 // END OF FIRST LOAD IMAGE FADE IN
+*/
 
 // SHARE LINK
 const navigatorVariable = window.navigator;
@@ -105,6 +126,7 @@ const shareHandler = async (e, id, comicId, comicTitle, comicDescription) => {
 };
 // END OF SHARE LINK
 
+/*
 // ZOOM AND SWIPE TO NEXT/PREVIOUS COMIC
 document.addEventListener("DOMContentLoaded", function () {
   const comicImageContainer = document.querySelector(
@@ -241,3 +263,26 @@ document.addEventListener("DOMContentLoaded", function () {
   // End of swipe to next/previous comic
 });
 // END OF ZOOM AND SWIPE TO NEXT/PREVIOUS COMIC
+*/
+
+// GALAXY STARFIELD
+(function () {
+  function randomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+  function generateStars(count, sizePx, opacityMin, opacityMax) {
+    var shadows = [];
+    for (var i = 0; i < count; i++) {
+      var x = randomInt(-50, 50);
+      var y = randomInt(-50, 50);
+      var opacity = (Math.random() * (opacityMax - opacityMin) + opacityMin).toFixed(2);
+      shadows.push(x + "vw " + y + "vh 0px " + sizePx + "px rgba(255,255,255," + opacity + ")");
+    }
+    return shadows.join(",");
+  }
+  var starsSmall = document.getElementById("galaxyStarsSmall");
+  var starsBig = document.getElementById("galaxyStarsBig");
+  if (starsSmall) starsSmall.style.boxShadow = generateStars(90, 1, 0.2, 0.6);
+  if (starsBig) starsBig.style.boxShadow = generateStars(25, 1.5, 0.5, 1);
+})();
+// END OF GALAXY STARFIELD

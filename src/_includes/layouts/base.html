@@ -57,7 +57,10 @@
     />
     <link rel="stylesheet" href="/assets/css/base.css" />
   </head>
-  <body>
+  <body {% if "BLUE" in page.url | upper %}class="background-blue" {% endif %}>
+    <div class="galaxy-nebula" aria-hidden="true"></div>
+    <div class="galaxy-stars galaxy-stars--small" aria-hidden="true" id="galaxyStarsSmall"></div>
+    <div class="galaxy-stars galaxy-stars--big" aria-hidden="true" id="galaxyStarsBig"></div>
     <header id="header" style="top: 0px">
       {% include "components/navbar.html" %}
     </header>
