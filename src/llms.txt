@@ -1,0 +1,17 @@
+# Willy + Froggy
+
+> Willy and Froggy is a webcomic website featuring all-ages comics made by Amari Čertkus and published by Voyager Golden Comics. The site hosts two comics: *The Theft of the Rare Blue Seaweed*, a long-form adventure comic, and *Bright Red*, a weekly humour strip. Both comics are free to read online.
+
+## Comics
+
+- [The Theft of the Rare Blue Seaweed Archive](https://willyandfroggy.com/BLUE-archive/): Full archive listing for the all-ages adventure comic. Currently 204 pages.
+- [Bright Red Archive](https://willyandfroggy.com/BR-archive/): Full archive listing for the weekly humour strip. Currently 21 strips.
+
+## Pages
+
+- [Home](https://willyandfroggy.com/): The homepage, showing the latest page of *The Theft of the Rare Blue Seaweed* and the latest strip of *Bright Red*.
+- [About](https://willyandfroggy.com/about/): Information about the comics, the creator Amari Čertkus, and the publisher Voyager Golden Comics.
+
+## Optional
+
+- [Online Shop](https://shop.willyandfroggy.com/): Merchandise and a tip jar to support the comics.

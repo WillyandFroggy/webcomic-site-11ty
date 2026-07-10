@@ -15,14 +15,16 @@ function ComicCard({
             loading="eager"
             fetchpriority="high"
             decoding="async"
-            sizes="(min-width: 400px) 428px, 100vw"
+            sizes="(min-width: 920px) 248px, calc(50vw - 27px)"
             srcset="
+              ${imgUrl}&amp;width=235&amp;height=206 235w,
               ${imgUrl}&amp;width=400&amp;height=350 400w,
+              ${imgUrl}&amp;width=470&amp;height=411 470w,
               ${imgUrl}&amp;width=640&amp;height=560 640w,
               ${imgUrl}&amp;width=750&amp;height=656 750w,
               ${imgUrl}&amp;width=800&amp;height=700 800w
             "
-            src="${imgUrl}&amp;width=400&amp;height=350"
+            src="${imgUrl}&amp;width=235&amp;height=206"
           />
         </a>
         <a href="${link}" class="comic-card__title">
